@@ -67,9 +67,8 @@ class _ImageClassifierState extends State<ImageClassifier> {
 
   pickImageTwo() async {
     var image = await ImagePicker.pickImage(source: ImageSource.camera);
-    if (image == null) return null;
+
     setState(() {
-      _loading = true;
       _image = image;
     });
     classifyImage(_image);
@@ -139,7 +138,7 @@ class _ImageClassifierState extends State<ImageClassifier> {
                 IconButton(
                   icon: Image.asset('assets/images/camera.png'),
                   iconSize: 350,
-                  onPressed: pickImage,
+                  onPressed: pickImageTwo,
                   padding: EdgeInsets.zero,
                 ),
                 IconButton(

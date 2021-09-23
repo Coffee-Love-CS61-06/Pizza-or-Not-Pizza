@@ -24,7 +24,6 @@ dependencies:
   flutter:
     sdk: flutter
   splashscreen:
-  camera:
 
 
   # The following adds the Cupertino Icons font to your application.
