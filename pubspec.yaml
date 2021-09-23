@@ -23,6 +23,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  splashscreen:
+  camera:
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -34,6 +36,7 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -51,6 +54,10 @@ flutter:
    - assets/labels.txt
    - assets/model_unquant.tflite
    - assets/model.tflite
+   - assets/images/logo.png
+   - assets/images/camera.png
+   - assets/images/backgroung.png
+   - assets/images/photo.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

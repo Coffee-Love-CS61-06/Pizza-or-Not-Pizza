@@ -93,46 +93,46 @@ class _ImageClassifierState extends State<ImageClassifier> {
               children: <Widget>[
                 _loading
                     ? Container(
-                        height: 300,
-                        width: 300,
-                      )
+                  height: 300,
+                  width: 300,
+                )
                     : Container(
-                        // margin: EdgeInsets.all(5),
-                        width: MediaQuery.of(context).size.width,
+                  // margin: EdgeInsets.all(5),
+                  width: MediaQuery.of(context).size.width,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      _image == null ? Container() : Image.file(_image),
+                      // SizedBox(
+                      //   height: 10,
+                      // ),
+                      _image == null
+                          ? Container()
+                          : _outputs != null
+                          ? Container(
                         child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: <Widget>[
-                            _image == null ? Container() : Image.file(_image),
-                            // SizedBox(
-                            //   height: 10,
-                            // ),
-                            _image == null
-                                ? Container()
-                                : _outputs != null
-                                    ? Container(
-                                        child: Column(
-                                          children: [
-                                            Text(
-                                              _outputs[0]["label"] + "\n",
-                                              style: TextStyle(
-                                                  color: Colors.black,
-                                                  fontSize: 15),
-                                            ),
-                                            Text(
-                                              "${(_outputs[0]["confidence"] * 100).toStringAsFixed(2)}%  Confidence level" +
-                                                  "\n",
-                                              style: TextStyle(
-                                                  color: Colors.black,
-                                                  fontSize: 15),
-                                            ),
-                                          ],
-                                        ),
-                                      )
-                                    : Container(child: Text(""))
+                          children: [
+                            Text(
+                              _outputs[0]["label"] + "\n",
+                              style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 15),
+                            ),
+                            Text(
+                              "${(_outputs[0]["confidence"] * 100).toStringAsFixed(2)}%  Confidence level" +
+                                  "\n",
+                              style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 15),
+                            ),
                           ],
                         ),
-                      ),
+                      )
+                          : Container(child: Text(""))
+                    ],
+                  ),
+                ),
                 // SizedBox(
                 //   height: MediaQuery.of(context).size.height * 0.01,
                 // ),
